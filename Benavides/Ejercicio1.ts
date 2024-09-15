@@ -4,7 +4,10 @@ class Cabecera {
   private fuente: string;
 
   constructor(tituloId: string) {
-      this.tituloElemento = document.getElementById(tituloId);
+      this.tituloElemento = <HTMLHeadingElement>document.getElementById(tituloId);
+      if (!this.tituloElemento) {
+          throw new Error(`El elemento con ID ${tituloId} no se encontró.`);
+      }
       this.color = getComputedStyle(this.tituloElemento).color;
       this.fuente = getComputedStyle(this.tituloElemento).fontFamily;
   }
@@ -35,20 +38,20 @@ const btnObtenerPropiedades = document.getElementById("btn-obtener-propiedades")
 const btnAlinearTitulo = document.getElementById("btn-alinear-titulo");
 const btnImprimirPropiedades = document.getElementById("btn-imprimir-propiedades");
 
-btnObtenerPropiedades.addEventListener("click", () => {
+btnObtenerPropiedades?.addEventListener("click", () => {
   cabecera.obtenerPropiedades();
 });
 
-btnAlinearTitulo.addEventListener("click", () => {
+btnAlinearTitulo?.addEventListener("click", () => {
   const alineaciones = ['left', 'center', 'right'];
   const alineacion = prompt("Ingrese la alineación: 'left', 'center', o 'right'");
-  if (alineaciones.includes(alineacion)) {
+  if (alineacion !== null && alineaciones.includes(alineacion)) {
       cabecera.alinearTitulo(alineacion);
   } else {
       alert("Alineación no válida. Usa 'left', 'center' o 'right'.");
   }
 });
 
-btnImprimirPropiedades.addEventListener("click", () => {
+btnImprimirPropiedades?.addEventListener("click", () => {
   cabecera.imprimirPropiedades();
 });

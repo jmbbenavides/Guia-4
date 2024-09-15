@@ -1,6 +1,9 @@
 var Cabecera = /** @class */ (function () {
     function Cabecera(tituloId) {
         this.tituloElemento = document.getElementById(tituloId);
+        if (!this.tituloElemento) {
+            throw new Error("El elemento con ID ".concat(tituloId, " no se encontr\u00F3."));
+        }
         this.color = getComputedStyle(this.tituloElemento).color;
         this.fuente = getComputedStyle(this.tituloElemento).fontFamily;
     }
@@ -26,19 +29,19 @@ var cabecera = new Cabecera("titulo-pagina");
 var btnObtenerPropiedades = document.getElementById("btn-obtener-propiedades");
 var btnAlinearTitulo = document.getElementById("btn-alinear-titulo");
 var btnImprimirPropiedades = document.getElementById("btn-imprimir-propiedades");
-btnObtenerPropiedades.addEventListener("click", function () {
+btnObtenerPropiedades === null || btnObtenerPropiedades === void 0 ? void 0 : btnObtenerPropiedades.addEventListener("click", function () {
     cabecera.obtenerPropiedades();
 });
-btnAlinearTitulo.addEventListener("click", function () {
+btnAlinearTitulo === null || btnAlinearTitulo === void 0 ? void 0 : btnAlinearTitulo.addEventListener("click", function () {
     var alineaciones = ['left', 'center', 'right'];
     var alineacion = prompt("Ingrese la alineación: 'left', 'center', o 'right'");
-    if (alineaciones.includes(alineacion)) {
+    if (alineacion !== null && alineaciones.includes(alineacion)) {
         cabecera.alinearTitulo(alineacion);
     }
     else {
         alert("Alineación no válida. Usa 'left', 'center' o 'right'.");
     }
 });
-btnImprimirPropiedades.addEventListener("click", function () {
+btnImprimirPropiedades === null || btnImprimirPropiedades === void 0 ? void 0 : btnImprimirPropiedades.addEventListener("click", function () {
     cabecera.imprimirPropiedades();
 });
