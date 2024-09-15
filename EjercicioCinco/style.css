@@ -1,0 +1,36 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #eef1f5;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+#output {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+br {
+  margin-bottom: 20px;
+}
+
+strong {
+  color: #3498db;
+}

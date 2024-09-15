@@ -38,7 +38,7 @@ var Empleado = /** @class */ (function (_super) {
         _this.sueldo = sueldo;
         return _this;
     }
-    // Método para cargar el sueldo
+    // Metodo para cargar el sueldo
     Empleado.prototype.cargarSueldo = function (sueldo) {
         this.sueldo = sueldo;
     };
